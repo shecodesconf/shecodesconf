@@ -1,0 +1,34 @@
+/*
+Theme Name: SheCodes Conf 2013 
+Theme URI: shecodesconf.com 
+Author: Jason Lock 
+Author URI: 
+Description: Theme for SheCodes conference 2013 
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: twentytwelve
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* Reset 
+------------------------------------------------------*/
+html, body { 
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography 
+------------------------------------------------------*/
+/* Grid 
+------------------------------------------------------*/
+/* Components 
+------------------------------------------------------*/
+/* Animations 
+------------------------------------------------------*/
+/* Media Queries 
+------------------------------------------------------*/
+
