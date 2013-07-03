@@ -8,22 +8,31 @@
  * different template.
  *
  * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @subpackage SheCodesConf 
+ * @since SheCodesConf 1.0
  */
 
 get_header(); ?>
 
-	<div id="primary" class="site-content">
-		<div id="content" role="main">
+	<div id="primary" class="fluid-row">
+		<div id="content" class="fluid-row--full" role="main">
+			<h1 class="entry-title"><?php the_title(); ?></h1>
+      <h2>heading2</h2>
+      <h3>heading3</h3>
+      <h4>heading3</h4>
+      <p>
+        wklejfhwlekjfhw lkejfhlw kej fhlwkjehfl wkjehfl wkjehf lkwj ehflkwjehflkwjeh flkwje fhlkwjef lkwjef lwkjef lwkje flkwje fklwje flkwefh wlkefwlkjef lwkjef lwkje fhwlkjef wlkjef wlkje fwkljef hwlefj hwlkejf wlkejhf
+      </p>
+      <p>
+        wklejfhwlekjfhw lkejfhlw kej fhlwkjehfl wkjehfl wkjehf lkwj ehflkwjehflkwjeh flkwje fhlkwjef lkwjef lwkjef lwkje flkwje fklwje flkwefh wlkefwlkjef lwkjef lwkje fhwlkjef wlkjef wlkje fwkljef hwlefj hwlkejf wlkejhf
+      </p>
+      <a href="" class="button button--green">BUY A TICKET</a>
+      <div class="fluid-row">
+        <div style="height: 42px; background-color:red;" class="fluid-row__unit fluid-row__unit--1-3"></div>
+        <div style="height: 42px; background-color:red;" class="fluid-row__unit fluid-row__unit--1-3"></div>
+        <div style="height: 42px; background-color:red;" class="fluid-row__unit fluid-row__unit--1-3"></div>
+      </div>
+		</div>
+	</div>
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', 'page' ); ?>
-				<?php comments_template( '', true ); ?>
-			<?php endwhile; // end of the loop. ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

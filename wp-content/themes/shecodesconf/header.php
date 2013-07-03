@@ -27,14 +27,20 @@
       <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
     <![endif]-->
     <?php wp_head(); ?>
+    <link href='http://fonts.googleapis.com/css?family=Arvo:400,400italic|Open+Sans:400italic,400' rel='stylesheet' type='text/css'>
   </head>
 
   <body <?php body_class(); ?>>
-    <header id="masthead" class="site-header" role="banner">
-    </header>
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-      <?php  wp_nav_menu( array( 'theme_location' => 'main', 'menu_class' => 'nav-menu' ) ); ?>
-    </nav>
+    <div class="fluid-row">
+      <header id="masthead" class="" role="banner">
+        <img src="http://shecodesconf.com/wp-content/themes/shecodesconf/header.png">
+      </header>
+    </div>
+    <div class="fluid-row main-menu">
+      <nav id="site-navigation" class="fluid-row--full" role="navigation">
+        <?php  wp_nav_menu( array( 'theme_location' => 'main', 'menu_class' => 'inline-list main-menu__links' ) ); ?>
+      </nav>
+    </div>
 
       <?php $header_image = get_header_image();
       if ( ! empty( $header_image ) ) : ?>

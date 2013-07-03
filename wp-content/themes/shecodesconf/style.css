@@ -7,8 +7,6 @@ Description: Theme for SheCodes conference 2013
 Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
-Text Domain: twentytwelve
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -16,17 +14,314 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /* Reset 
 ------------------------------------------------------*/
-html, body { 
+html, body, h1, h2, h3, h4, h5, h6, p, ul { 
   margin: 0;
   padding: 0;
 }
 
+ul { list-style-type: none; }
+
+/* Global 
+------------------------------------------------------*/
+body { background-color: #F0F0F0; }
+
 /* Typography 
 ------------------------------------------------------*/
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-size: 0.625em;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Arvo', serif;
+  font-weight: 100;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 5.0em; }
+h2 { font-size: 4.0em; }
+h3 { font-size: 3.0em; }
+h4 { font-size: 2.0em; }
+h5 { font-size: 2.0em; }
+
+p, li, a { 
+  font-size: 1.4em; 
+}
+
+p, li { 
+  margin-bottom: 0.5em;
+}
+
 /* Grid 
 ------------------------------------------------------*/
+.fluid-row {
+  width: 100%;
+}
+
+.fluid-row--full {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.fluid-row__unit { 
+  display: inline-block;
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box; 
+  vertical-align: top;
+}
+
+.fluid-row__unit:first-child { margin-left: 0; }
+
+.fluid-row__unit--4-5 { width: 85%; }
+.fluid-row__unit--3-4 { width: 75%; }
+.fluid-row__unit--1-2 { width: 50%; }
+.fluid-row__unit--1-3 { width: 40%; }
+.fluid-row__unit--1-4 { width: 33.333%; }
+.fluid-row__unit--1-5 { width: 20%; }
+.fluid-row__unit--1-6 { width: 15%; }
+
 /* Components 
 ------------------------------------------------------*/
+header { 
+  background-color: #fddc39; 
+  text-align: center;
+}
+
+/* Media Block */
+.media > .media__img, 
+.media > .media__body {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.media > .media__img {
+  margin-right: 20px;
+}
+
+/* Inline List */
+.inline-list > li { 
+  display: inline-block;
+}
+
+/* Dividers */
+.divider {
+  border: none;
+  margin: 45px 0 45px 0;
+  display: block;
+  background: url('hatch-pattern.png') repeat;
+  height: 9px; 
+}
+
+.divider.mtn { margin-top: 0; }
+.divider.mbn { margin-bottom: 0; }
+
+/* Buttons */
+.button { 
+  border-radius: 4px;
+  padding: 0.8em 3em;
+  text-decoration: none;
+  -webkit-transition: background-color .15s ease-in-out;
+  -moz-transition: background-color .15s ease-in-out;
+  -o-transition: background-color .15s ease-in-out;
+  transition: background-color .15s ease-in-out;
+}
+
+.button--green { 
+  display: inline-block;
+  color: #FFF;
+  background-color: #54CA99;
+}
+
+.button--white-stroke { 
+  display: inline-block;
+  border: 2px solid #FFF;
+  color: #FFF;
+}
+
+.button--green:hover {
+  background-color: #4fbd8d;
+}
+
+.main-menu {
+  border-top: 1px solid #B0ACA7;
+  border-bottom: 1px solid #B0ACA7;
+}
+
+.main-menu__links {
+  text-align: center;
+}
+
+.main-menu__links > li {
+  border-right: 1px solid #B0ACA7;
+  margin: 0 0 0 -3px;
+}
+
+.main-menu__links > li:last-child {
+  border-right: none;
+}
+
+.main-menu__links > li > a {
+  padding: 0.7em 4.1em;
+  display: block;
+  color: #353439;
+  text-decoration: none;
+  -webkit-transition: background-color .15s ease-in-out;
+  -moz-transition: background-color .15s ease-in-out;
+  -o-transition: background-color .15s ease-in-out;
+  transition: background-color .15s ease-in-out;
+}
+
+.main-menu__links > li > a:hover {
+  background-color: #E3E3E3;
+}
+
+/* Title Block */
+.title-block {
+  padding: 45px 0 45px 0;
+  text-align: center;
+}
+
+.title-block > .accent {
+  margin: auto;
+  width: 135px;
+  height: 14px;
+  background: url('accent.png') no-repeat;
+}
+
+.schedule { background: url('hatch-pattern.png') repeat; }
+
+.schedule__items {
+  margin-top: 15px;
+  border-left: 2px solid #35343A;
+  background-color: #F0F0F0;
+}
+
+.schedule__items--item {
+  border-bottom: 1px solid #B0ACA7;
+  padding: 25px 0 25px 50px;
+  position: relative;
+}
+
+.schedule__item h5 {
+  font-weight: 500;
+}
+
+.schedule__item--speaker {
+  background-color: #fef883;
+  text-transform: uppercase;
+}
+
+.schedule__item p {
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.schedule__item--timeframe {
+  position: absolute;
+  left: -95px;
+  top: 25px;
+  font-size: 1.8em;
+  font-size: 1.4em;
+  font-weight: 100;
+  font-style: italic;
+  background-color: #F0F0F0;
+}
+
+.schedule__item--dot {
+  height: 6px;
+  width: 6px;
+  position: absolute;
+  left: -4px;
+  top: 32px;
+  background-color: #fef883;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0 2px rgba(0,0,0, .5);
+}
+
+/* Overview */
+.overview {
+  padding: 20px;
+  background: url('hatch-pattern.png') repeat; 
+  text-align: center;
+}
+
+.overview h2 {
+  display: inline;
+  background-color: #F0F0F0;
+}
+
+.headshot {
+  position: relative;
+  box-shadow: inset 1px -62px 45px -26px rgba(0, 0, 0, .5);
+}
+
+.headshot .details { 
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  color: #FFF;
+  text-align: center; 
+}
+
+.origanizer {
+  margin: 0 10px 0 0;
+}
+
+.origanizer img {
+  width: 100%;
+  max-width: 240px;
+  height: 240px;
+  position: relative;
+  z-index: -1;
+  opacity: .8; 
+  -webkit-transition: opacity .15s ease-in-out; 
+  -moz-transition: opacity .15s ease-in-out; 
+  transition: opacity .15s ease-in-out; 
+}
+
+.headshot:hover img {
+  opacity: 1; 
+}
+
+.cta-block {
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Footer */
+
+footer {
+  padding: 40px 0;
+  position: relative;
+  background-color: #353439;
+  color: #FFF;
+  text-align: center; 
+}
+
+footer a { color: #FFF; text-decoration: none; font-size: 1.0em; }
+footer .button { 
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+footer .socail-links { 
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+footer p { margin: 50px 0; }
+footer .legal { margin-bottom: 20px; }
+footer .legal > li { font-size: 0.5em; }
+
 /* Animations 
 ------------------------------------------------------*/
 /* Media Queries 

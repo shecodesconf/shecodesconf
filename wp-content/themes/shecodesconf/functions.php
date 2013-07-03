@@ -41,6 +41,7 @@ function shecodesconf_setup() {
 	add_theme_support( 'custom-background', array(
 		'default-color' => 'e6e6e6',
 	) );
+
 }
 
 add_action( 'after_setup_theme', 'shecodesconf_setup' );
@@ -49,6 +50,7 @@ add_action( 'after_setup_theme', 'shecodesconf_setup' );
  * Adds support for a custom header image.
  */
 require( get_template_directory() . '/inc/custom-header.php' );
+wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
 
 /**
  * Creates a nicely formatted and more specific title element text
