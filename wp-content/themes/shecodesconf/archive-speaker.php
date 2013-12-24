@@ -28,13 +28,15 @@ get_header(); ?>
     );
 
     $image = get_posts($args);
+    $speaker_link = str_replace( ' ', '-', the_title('','',false) ); 
+    $speaker_link = strtolower( $speaker_link );
     ?>
-      <div class="media">
-        <div class="media__img"><?php echo wp_get_attachment_image($image[0]->ID, 'medium'); ?></div>
+      <div id="<?php echo $speaker_link; ?>" class="media speaker">
+        <div class="media__img speaker--img"><?php echo wp_get_attachment_image($image[0]->ID, 'medium'); ?></div>
          <div class="media__body">
-        <h5><?php echo the_title(); ?></h5>
+        <h3><?php echo the_title(); ?></h3>
         <p><small><?php echo get_post_meta(get_the_ID(), 'speaker_company_box', true); ?> </small></p>
-        <p><?php echo substr( strip_tags(get_the_content()),0,235); ?></p>
+        <p><?php echo strip_tags(get_the_content(), '<p>,<a>,<br>'); ?></p>
         </div>
       </div>
       <hr class="divider">

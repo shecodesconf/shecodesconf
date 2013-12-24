@@ -22,18 +22,23 @@
   <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width" />
+    <meta property="og:image" content="http://shecodesconf.com/wp-content/themes/shecodesconf/brand.png"/>
     <title><?php wp_title( '|', true, 'right' ); ?></title>
     <!--[if lt IE 9]>
       <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
     <![endif]-->
     <?php wp_head(); ?>
+    
+    <link href='<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico' rel='shortcut icon'>
     <link href='http://fonts.googleapis.com/css?family=Arvo:400,400italic|Open+Sans:400italic,400' rel='stylesheet' type='text/css'>
   </head>
 
   <body <?php body_class(); ?>>
-    <div class="fluid-row">
+    <div class="fluid-row masthead">
       <header id="masthead" class="" role="banner">
-        <img src="http://shecodesconf.com/wp-content/themes/shecodesconf/header.png">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand">SheCodes Conf</a>
+        <p>Aug 9, 2013 | Mountain View, CA</p>
+        <a href="//shecodes.eventbrite.com/" class="button button--green">Get Tickets</a>
       </header>
     </div>
     <div class="fluid-row main-menu">

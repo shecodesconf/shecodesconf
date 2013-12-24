@@ -9,7 +9,7 @@ get_header(); ?>
 	<div id="primary" class="fluid-row">
 		<div id="content" class="fluid-row--full" role="main">
       <div class="title-block">
-			  <h2><?php the_title(); ?></h2>
+			  <h2>Schedule</h2>
         <div class="accent"></div>
       </div>
       <div class="fluid-row schedule">
@@ -17,22 +17,25 @@ get_header(); ?>
         </aside>
         <div class="fluid-row__unit fluid-row__unit--4-5 schedule__items">
           <?php
-            $args = array( 'post_type' => 'schedule' );
+            $args = array( 'post_type' => 'schedule', 'posts_per_page' => -1 );
             $schedule_items = new WP_Query( $args );
 
             while($schedule_items->have_posts()) {
               $schedule_items->the_post();
+              $speaker = get_post_meta(get_the_ID(), 'speaker_name', true);
+              $speaker_link = str_replace( ' ', '-', $speaker ); 
+              $speaker_link = strtolower( $speaker_link );
               ?>
 
               <div class="schedule__items--item schedule__item">
-                <h5><?php echo the_title() ?></h5>
-                <span class="schedule__item--speaker"> <?php echo get_post_meta(get_the_ID(), 'speaker_name', true) ?></span>
+                <h3><?php echo the_title() ?></h3>
+                <a href="/speakers/#<?php echo $speaker_link ?>" class="schedule__item--speaker"> <?php echo $speaker; ?></a>
                 <div class="schedule__item--timeframe"> 
-                  <?php echo get_post_meta(get_the_ID(), 'timeframe-from', true) ?>
-                  <span>:</span>
-                  <?php echo get_post_meta(get_the_ID(), 'timeframe-to', true) ?>
+                  <?php echo get_post_meta(get_the_ID(), 'timeframe_start', true) ?>
+                  <span>-</span>
+                  <?php echo get_post_meta(get_the_ID(), 'timeframe_end', true) ?>
                 </div>
-                <p> <?php echo substr( strip_tags(get_the_content()),0,235) ?></p>
+                <p> <?php echo get_the_content(); ?></p>
                 <div class="schedule__item--dot"></div>
               </div>
             <?php } ?>
